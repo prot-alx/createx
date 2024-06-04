@@ -6,12 +6,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'white': '#FFFFFF',
-        'primary':'#17696A',
-        'success':'#03CEA4',
-        'danger':'#FF4242',
-        'warning':'#F89828',
-        'info':'#5A87FC',
+        white: '#FFFFFF',
+        primary:'#17696A',
+        success:'#03CEA4',
+        danger:'#FF4242',
+        warning:'#F89828',
+        info:'#5A87FC',
         'divider-gradient':'',
         gray: {
           100: '#F9F9F9',
@@ -23,6 +23,11 @@ export default {
           700: '#787A80',
           800: '#424551',
           900: '#1E212C',
+        },
+        shadow: {
+          'small':'',
+          'regular':'',
+          'large':'',
         },
       },
     },
