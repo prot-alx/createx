@@ -31,6 +31,12 @@ export default {
         },
       },
     },
+    fontFamily: {
+      lato: ['Lato', 'sans-serif']
+    },
+    fontSize: {
+      
+    }
   },
   plugins: [],
 }
