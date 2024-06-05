@@ -3,48 +3,55 @@ export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
+  theme: {    
+    colors: {
+      white: '#FFFFFF',
+      primary:'#17696A',
+      success:'#03CEA4',
+      danger:'#FF4242',
+      warning:'#F89828',
+      info:'#5A87FC',
+      gray: {
+        100: '#F9F9F9',
+        200: '#F4F5F7',
+        300: '#E5E8ED',
+        400: '#D7DADD',
+        500: '#B3B7BC',
+        600: '#9A9CA5',
+        700: '#787A80',
+        800: '#424551',
+        900: '#1E212C',
+      },
+    }, 
     extend: {
-      colors: {
-        white: '#FFFFFF',
-        primary:'#17696A',
-        success:'#03CEA4',
-        danger:'#FF4242',
-        warning:'#F89828',
-        info:'#5A87FC',
-        'divider-gradient':'',
-        gray: {
-          100: '#F9F9F9',
-          200: '#F4F5F7',
-          300: '#E5E8ED',
-          400: '#D7DADD',
-          500: '#B3B7BC',
-          600: '#9A9CA5',
-          700: '#787A80',
-          800: '#424551',
-          900: '#1E212C',
-        },
-        shadow: {
-          'small':'',
-          'regular':'',
-          'large':'',
-        },
+      shadow: {
+        'small':'0px 80px 80px -20px rgba(154, 156, 165 / 0.08)' |
+                '0px 30px 24px -10px rgba(154, 156, 165 / 0.05)' |
+                '0px 12px 10px -6px rgba(154, 156, 165 / 0.04)'|
+                '0px 4px 4px -4px rgba(30, 33, 44 / 0.03)',
+
+        'regular':'0px 80px 80px -20px rgba(154, 156, 165 / 0.16)'|
+                  '0px 30px 24px -10px rgba(154, 156, 165 / 0.10)'|
+                  '0px 12px 10px -6px rgba(154, 156, 165 / 0.08)'|
+                  '0px 4px 4px -4px rgba(30, 33, 44 / 0.05)',
+
+        'large':'0px 60px 80px -20px rgba(30, 33, 44 / 0.16)'|
+                '0px 26px 24px -10px rgba(30, 33, 44 / 0.10)'|
+                '0px 10px 12px -6px rgba(30, 33, 44 / 0.08)'|
+                '0px 4px 4px -4px rgba(30, 33, 44 / 0.05)',
+      },
+      fontFamily: {
+        lato: ['Lato', 'sans-serif']
+      },
+      fontSize: {
+        lead: ['1.3rem', {lineHeight: '1.5', }],
+        large: ['1.1rem', {lineHeight: '1.5', }],
+        base: ['1rem', {lineHeight: '1.6', }],
+        small: ['0.9rem', {lineHeight: '1.5', }],
+        extrasmall: ['0.8rem', {lineHeight: '1.5', }],
+        extraextrasmall: ['0.6rem', {lineHeight: '1.5', }],
       },
     },
-    fontFamily: {
-      lato: ['Lato', 'sans-serif']
-    },
-    fontSize: {
-      lead: '1.3rem',
-      large: '1.1rem',
-      base:'1rem',
-      small:'0.9rem',
-      extrasmall:'0.8rem',
-      extraextrasmall:'0.6rem',
-    },
-    lineHeight: {
-      
-    }
   },
   plugins: [],
 }
