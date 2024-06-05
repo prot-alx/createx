@@ -13,9 +13,9 @@ const App = () => {
         <div className="shadow-xl w-11 h-11"></div>
         <div className="shadow-2xl w-11 h-11"></div>
 
-        <div  className="font-lato text-gray-900">ASDFGHJJKLZXCBNM</div>
-        <div  className="font-lato text-gray-900">asdfgfgjghkwefwegdfbdfb</div>
-        <div className="font-lato text-gray-900">1233456467867897890</div>
+        <div  className="font-lato text-large text-gray-900">ASDFGHJJKLZXCBNM</div>
+        <div  className="font-lato text-small text-gray-900">asdfgfgjghkwefwegdfbdfb</div>
+        <div className="font-lato text-extraextrasmall text-gray-900">1233456467867897890</div>
         <div className="font-lato text-gray-900">knijoasn(*H(*AHS(*H=MN)))A</div>
       </div>
     </>

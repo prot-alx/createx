@@ -35,6 +35,14 @@ export default {
       lato: ['Lato', 'sans-serif']
     },
     fontSize: {
+      lead: '1.3rem',
+      large: '1.1rem',
+      base:'1rem',
+      small:'0.9rem',
+      extrasmall:'0.8rem',
+      extraextrasmall:'0.6rem',
+    },
+    lineHeight: {
       
     }
   },
