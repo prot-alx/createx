@@ -3,6 +3,7 @@ import { forwardRef, useMemo } from "react";
 import { type VariantProps } from "tailwind-variants";
 import { TbLoader } from "react-icons/tb";
 import { outlineButton, solidButton, ghostButton } from './largeStyles';
+import React from "react";
 
 // define all the button attributes
 type BaseButtonAttributes = React.ComponentPropsWithoutRef<"button">;
@@ -41,7 +42,7 @@ const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
 
   const renderButtonVariant=()=>{
     if(buttonVariant==="solid"){
-      return solidButton({...buttonStyle,className})
+      return solidButton({...buttonStyle, className})
     }
    }
 
