@@ -11,6 +11,7 @@ export default {
       danger:'#FF4242',
       warning:'#F89828',
       info:'#5A87FC',
+      black: '#000000',
       gray: {
         100: '#F9F9F9',
         200: '#F4F5F7',

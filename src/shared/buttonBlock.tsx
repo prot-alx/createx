@@ -6,25 +6,31 @@ export const ButtonBlock = () => {
         <div>
             <h1 className="text-2xl mb-4 ">Button Examples</h1>
             <div className="p-4 flex gap-4">
-                <Button color="primary" size="small">
+                <Button type="basic" size="small">
                     Button
                 </Button>
-                <Button color="white" size="regular">
+                <Button type="basic" size="regular">
                     Button
                 </Button>
-                <Button color="primary" size="large">
+                <Button type="basic" size="large">
                     Button
                 </Button>
-                <Button color="primary" disabled>
+                <Button type="secondary">
                     Button
                 </Button>
-                <Button color="white" size="large" disabled>
+                <Button type="secondary" size="large">
                     Button
                 </Button>
-                <Button color="gray-1" size="large">
+                <Button type="dark" size="small">
                     Button
                 </Button>
-                <Button color="gray-2" size="large">
+                <Button type="dark" size="regular">
+                    Button
+                </Button>
+                <Button type="white" size="small">
+                    Button
+                </Button>
+                <Button type="white" size="large">
                     Button
                 </Button>
                 <PlayButton></PlayButton>
