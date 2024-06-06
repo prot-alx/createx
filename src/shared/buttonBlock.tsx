@@ -1,35 +1,34 @@
-import Button from "./buttons/basic/large"
+import Button from "./buttons/Button";
+import PlayButton from "./buttons/PlayButton";
 
-export const  ButtonBlock = () => {
+export const ButtonBlock = () => {
     return (
-        <div className="p-6 space-x-4 ">
-        <Button buttonStyle={{ color: 'green', rounded: 'sm', size: 'regular' }}>
-          Button
-        </Button>
-        <Button buttonStyle={{ color: 'teal', rounded: 'sm', size: 'small' }}>
-          Button
-        </Button>
-        <Button buttonStyle={{ color: 'yellow', rounded: 'sm', size: 'large' }}>
-          Button
-        </Button>
-        <Button buttonStyle={{ color: 'gray', rounded: 'sm', size: 'regular' }}>
-          Button
-        </Button>
-        <Button buttonStyle={{ color: 'gray', rounded: 'sm', size: 'small' }}>
-          Button
-        </Button>
-        <Button buttonStyle={{ color: 'gray', rounded: 'sm', size: 'small' }}>
-          Button
-        </Button>
-        <Button buttonStyle={{ color: 'gray', rounded: 'sm', size: 'regular' }}>
-          Button
-        </Button>
-        <Button buttonStyle={{ color: 'gray', rounded: 'sm', size: 'large' }}>
-          Button
-        </Button>
-        <Button buttonStyle={{ color: 'gray', rounded: 'sm', size: 'regular' }}>
-          Button
-        </Button>
-      </div>
+        <div>
+            <h1 className="text-2xl mb-4 ">Button Examples</h1>
+            <div className="p-4 flex gap-4">
+                <Button color="primary" size="small">
+                    Button
+                </Button>
+                <Button color="white" size="regular">
+                    Button
+                </Button>
+                <Button color="primary" size="large">
+                    Button
+                </Button>
+                <Button color="primary" disabled>
+                    Button
+                </Button>
+                <Button color="white" size="large" disabled>
+                    Button
+                </Button>
+                <Button color="gray-1" size="large">
+                    Button
+                </Button>
+                <Button color="gray-2" size="large">
+                    Button
+                </Button>
+                <PlayButton></PlayButton>
+            </div>
+        </div>
     )
 }
