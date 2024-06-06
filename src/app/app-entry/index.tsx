@@ -17,9 +17,6 @@ const App = () => {
           Button
         </Button>
       </div>
-      <Button buttonStyle={{ color: 'green', rounded: 'lg', size: 'md' }}>
-        Button
-      </Button>
     </div>
   )
 }
