@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BaseLayout} from '@/widgets';
+import { BaseLayout } from '@/widgets';
 import { RouterProvider } from 'react-router-dom';
 import { appRouter } from './appRouter';
 import '@/app/index.css';
