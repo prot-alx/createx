@@ -1,9 +1,21 @@
-import { ButtonBlock } from "@/entities";
+import { FC } from 'react';
 
-export const BaseLayout = () => {
+interface BaseLayoutProps {
+  children: React.ReactNode;
+};
+
+export const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
   return (
-    <div className="font-lato">
-      <ButtonBlock></ButtonBlock>
+    <div>
+      <header>
+        HEADER
+      </header>
+      <main>
+        {children}
+      </main>
+      <footer>
+        FOOTER
+      </footer>
     </div>
-  )
-}
+  );
+};
