@@ -1,5 +1,5 @@
-import Button from "./buttons/Button";
-import PlayButton from "./buttons/PlayButton";
+import Button from "@/shared/ui/buttons/Button";
+import PlayButton from "@/shared/ui/buttons/PlayButton";
 
 export const ButtonBlock = () => {
     return (
