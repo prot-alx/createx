@@ -24,6 +24,14 @@ export default {
         900: '#1E212C',
       },
     },
+    screens: {
+      xs: '320px',
+      sm: '425px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1440px',
+    },
     extend: {   
       boxShadow: {
         'small': '0px 80px 80px -20px rgba(154, 156, 165 , 0.08), 0px 30px 24px -10px rgba(154, 156, 165 , 0.05), 0px 12px 10px -6px rgba(154, 156, 165 , 0.04), 0px 4px 4px -4px rgba(30, 33, 44 , 0.03)',
