@@ -20,20 +20,20 @@ export const help = {
 export const shop = {
   title: 'SHOP',
   items: [
-    {  id: 0, text: 'New arrivals', link: '/new-arrivals', },
-    {  id: 1, text: 'Trending now', link: '/trending', },
-    {  id: 2, text: 'Sales', link: '/sales', },
-    {  id: 3, text: 'Brands', link: '/brands', },
+    { id: 0, text: 'New arrivals', link: '/new-arrivals', },
+    { id: 1, text: 'Trending now', link: '/trending', },
+    { id: 2, text: 'Sales', link: '/sales', },
+    { id: 3, text: 'Brands', link: '/brands', },
   ],
 };
 
 export const social = {
   items: [
     { id: 0, img: facebook, link: 'https://www.facebook.com', },
-    { id: 1, img: instagram, link: 'https://www.instagram.com',  },
-    { id: 2, img: twitter, link: 'https://www.twitter.com',  },
-    { id: 3, img: youtube, link: 'https://www.youtube.com',  },
-    { id: 4, img: pinterest, link: 'https://www.pinterest.com',  },
+    { id: 1, img: instagram, link: 'https://www.instagram.com', },
+    { id: 2, img: twitter, link: 'https://www.twitter.com', },
+    { id: 3, img: youtube, link: 'https://www.youtube.com', },
+    { id: 4, img: pinterest, link: 'https://www.pinterest.com', },
   ],
 }
 

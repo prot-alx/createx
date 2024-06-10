@@ -47,7 +47,7 @@ export const ContactsList: React.FC<ContactsListItemProps> = ({ title, items, })
       <ul>
         {items.map(item => (
           <li className="text-gray-500" key={item.id}>
-            <NavLink to={item.link}>{item.contact} {item.text}</NavLink>
+            <NavLink to={item.link}><span className="font-bold">{item.contact}</span> {item.text}</NavLink>
           </li>
         ))}
       </ul>
@@ -59,11 +59,11 @@ export const LowerFooter: React.FC = () => {
   return (
     <div className="flex justify-between pb-8 pt-7 text-gray-500">
       <div className="flex">
-        <span>© All rights reserved. Made with by </span>
-        <div className="px-1"><img className="pt-1" src={heart} alt="" /></div>
-        <span> Createx Studio</span>
+        <span className="text-extrasmall">© All rights reserved. Made with by </span>
+        <div className="px-1"><img className="pt-[0.5px]" src={heart} alt="" /></div>
+        <span className="text-extrasmall"> Createx Studio</span>
       </div>
-      <div>Go to top</div>
+      <div className="text-base font-bold">Go to top</div>
     </div>
   );
 };
