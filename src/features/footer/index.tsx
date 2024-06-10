@@ -1,5 +1,5 @@
 import React from "react";
-import { shop, help, contacts, social, applinks, lowerfooter } from './menu-list/model';
+import { shop, help, contacts, social, applinks } from './menu-list/model';
 import { AppList, ContactsList, LowerFooter, MenuList, SocialList } from "./menu-list/menuListComponents";
 
 export const Footer: React.FC = () => {
@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
       </div>
       <div className="border-t-[1px] border-gray-600">
       <div className="container mx-auto ">
-        <LowerFooter items={lowerfooter.items}/>
+        <LowerFooter />
       </div>
       </div>
     </div>
