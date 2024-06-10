@@ -1,6 +1,5 @@
-import { contacts, help, login, shop, news, currency } from './menu-list/model/model';
-import { ImgHandler } from './menu-list/menu-items/imgHandler';
-import { TextHandler } from './menu-list/menu-items/textHandler';
+import { contacts, help, login, shop, news, currency } from './menu-list/model';
+import { TextHandler, ImgHandler } from './menu-list/menuListComponents';
 
 export const Header = () => {
     return (
