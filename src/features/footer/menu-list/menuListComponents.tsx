@@ -60,7 +60,7 @@ export const LowerFooter: React.FC = () => {
     <div className="flex justify-between pb-8 pt-7 text-gray-500">
       <div className="flex">
         <span>© All rights reserved. Made with by </span>
-        <div className="px-1"><img src={heart} alt="" /></div>
+        <div className="px-1"><img className="pt-1" src={heart} alt="" /></div>
         <span> Createx Studio</span>
       </div>
       <div>Go to top</div>
