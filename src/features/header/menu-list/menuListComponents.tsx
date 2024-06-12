@@ -94,7 +94,7 @@ export const HeaderAdList: React.FC<ListItemProps> = ({ items }) => {
       <button onClick={handlePrevClick} className="bg-primary text-white p-2">
         <img src={LeftArrow} alt="LeftArrow"/>
       </button>
-      <ul className="flex w-96 my-auto">
+      <ul className="flex justify-center w-96 my-auto">
         {items.map((item, index) => (
           <li onClick={handleNextClick}
               className={`text-white ${
