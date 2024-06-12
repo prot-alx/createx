@@ -20,7 +20,7 @@ export const help = {
 export const shop = {
   title: 'SHOP',
   items: [
-    { id: 0, text: 'New arrivals', link: '/new-arrivals', },
+    { id: 0, text: 'New arrivals', link: '/new', },
     { id: 1, text: 'Trending now', link: '/trending', },
     { id: 2, text: 'Sales', link: '/sales', },
     { id: 3, text: 'Brands', link: '/brands', },

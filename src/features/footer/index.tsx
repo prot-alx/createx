@@ -1,6 +1,6 @@
 import React from "react";
 import { shop, help, contacts, social, applinks } from './menu-list/model';
-import { AppList, ContactsList, LowerFooter, MenuList, SocialList } from "./menu-list/menuListComponents";
+import { AppList, ContactsList, LowerFooter, MenuList, SocialList, } from "./menu-list/menuListComponents";
 
 export const Footer: React.FC = () => {
   return (

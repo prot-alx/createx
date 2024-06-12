@@ -1,8 +1,10 @@
-export const contacts = {
-  items: [
-    { id: 0, text: 'Aviable 24/7 at (405)555-0128', link: 'tel:+4055550128'},
-  ],
-};
+import chinaflag from "@/shared/img/flag/flag-china.png";
+import euflag from '@/shared/img/flag/flag-eu.svg';
+import usaflag from '@/shared/img/flag/flag-usa.svg';
+import cart from '@/shared/img/Cart.svg';
+import wishlistHeart from '@/shared/img/wishlist_heart.svg';
+
+export const contacts = { id: 0, text: 'Aviable 24/7 at', number: '(405)555-0128', link: 'tel:+4055550128'};
 
 export const help = {
   items: [
@@ -13,12 +15,10 @@ export const help = {
   ],
 };
 
-export const login = {
-  items: [
-    { id: 0, text: 'Log in', link: '/login', },
-    { id: 1, text: 'Register', link: '/register', },
-  ],
-};
+export const login = { id: 0, text: 'Log in', link: '/login', };
+
+export const register = { id: 1, text: 'Register', link: '/register', };
+
 
 export const shop = {
   items: [
@@ -32,7 +32,7 @@ export const shop = {
 
 export const news = {
   items: [
-    { id: 0, text: 'Up to 70% Off. Shop our latest sale styles', link: '/', },
+    { id: 0, text: 'Up to 70% Off. Shop our latest sale styles', link: '/sales', },
     { id: 1, text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.', link: '/', },
     { id: 2, text: 'Fugiat non saepe consequatur maiores!', link: '/', },
     { id: 3, text: 'Corrupti molestias eveniet exercitationem, ipsam laborum vero est?', link: '/', },
@@ -41,8 +41,12 @@ export const news = {
 
 export const currency = {
   items: [
-    { id: 0, icon: '1', text: 'Eng / $' },
-    { id: 1, icon: '2', text: 'Eur / €' },
-    { id: 2, icon: '3', text: 'Cn / ¥' },
+    { id: 0, icon: usaflag, text: 'Eng / $' },
+    { id: 1, icon: euflag, text: 'Eur / €' },
+    { id: 2, icon: chinaflag, text: 'Cn / ¥' },
   ],
 };
+
+export const userwishlist = { id: 0, count: 2, icon: wishlistHeart, link: '/wishlist', };
+
+export const usercart = { id: 0, count: 4, icon: cart, link: '/cart', };

@@ -8,12 +8,17 @@ export const appRouter = createBrowserRouter([
       {
         path: '/',
         index: true,
-        element: <div>MAIN</div>,
+        element: <div className='mt-[150vh]'>MAIN</div>,
         errorElement: <div>404</div>
       },
       {
         path: '/contacts',
         element: <div>CONTACTS</div>,
+        errorElement: <div>404</div>
+      },
+      {
+        path: '/profile',
+        element: <div>PROFILE</div>,
         errorElement: <div>404</div>
       },
       {
@@ -38,32 +43,27 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: '/blog',
-        element: <div>blog</div>,
+        element: <div>BLOG</div>,
         errorElement: <div>404</div>
       },
       {
         path: '/delivery',
-        element: <div>delivery</div>,
+        element: <div>DELIVERY</div>,
         errorElement: <div>404</div>
       },
       {
         path: '/faq',
-        element: <div>faq</div>,
-        errorElement: <div>404</div>
-      },
-      {
-        path: '/new-arrivals',
-        element: <div>new-arrivals</div>,
+        element: <div>FAQ</div>,
         errorElement: <div>404</div>
       },
       {
         path: '/brands',
-        element: <div>brands</div>,
+        element: <div>BRANDS</div>,
         errorElement: <div>404</div>
       },
       {
         path: '/sales',
-        element: <div>sales</div>,
+        element: <div>SALES</div>,
         errorElement: <div>404</div>
       },
       {
@@ -74,6 +74,16 @@ export const appRouter = createBrowserRouter([
       {
         path: '/register',
         element: <div>REGISTER</div>,
+        errorElement: <div>404</div>
+      },
+      {
+        path: '/cart',
+        element: <div>CART</div>,
+        errorElement: <div>404</div>
+      },
+      {
+        path: '/wishlist',
+        element: <div>WISHLIST</div>,
         errorElement: <div>404</div>
       },
     ],

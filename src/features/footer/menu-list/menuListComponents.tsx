@@ -20,7 +20,7 @@ export const AppList: React.FC<AppListProps> = ({ title, items, }) => {
       <ul className="flex gap-5">
         {items.map(item => (
           <li className="text-gray-500" key={item.id}>
-            <NavLink to={item.link}><img src={item.img} alt={item.link} /></NavLink>
+            <NavLink to={item.link}><img decoding="async" src={item.img} alt={item.link} /></NavLink>
           </li>
         ))}
       </ul>
@@ -55,15 +55,24 @@ export const ContactsList: React.FC<ContactsListItemProps> = ({ title, items, })
   );
 };
 
+
+
 export const LowerFooter: React.FC = () => {
+  const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 8);
+    }
+  };
   return (
     <div className="flex justify-between pb-8 pt-7 text-gray-500">
-      <div className="flex">
+      <div className="flex my-auto">
         <span className="text-extrasmall">© All rights reserved. Made with by </span>
-        <div className="px-1"><img className="pt-[0.5px]" src={heart} alt="" /></div>
+        <div className="px-1"><img decoding="async" className="pt-[0.5px]" src={heart} alt="heart" /></div>
         <span className="text-extrasmall"> Createx Studio</span>
       </div>
-      <div className="text-base font-bold">Go to top</div>
+      <button onClick={scrollToTop} className="text-base font-bold active:translate-y-1">Go to top</button>
     </div>
   );
 };
@@ -110,7 +119,7 @@ export const SocialList: React.FC<SocialListProps> = ({ items }) => {
       <ul className="flex gap-3 pt-6">
         {items.map(item => (
           <li className="text-gray-500" key={item.id}>
-            <NavLink to={item.link}><img src={item.img} alt={item.link} /></NavLink>
+            <NavLink to={item.link}><img decoding="async" src={item.img} alt={item.link} /></NavLink>
           </li>
         ))}
       </ul>
