@@ -91,13 +91,13 @@ export const HeaderAdList: React.FC<ListItemProps> = ({ items }) => {
 
   return (
     <div className="my-auto flex justify-center">
-      <button onClick={handlePrevClick} className="transform bg-primary text-white p-2">
+      <button onClick={handlePrevClick} className="bg-primary text-white p-2">
         <img src={LeftArrow} alt="LeftArrow"/>
       </button>
-      <ul className="flex overflow-hidden w-96 my-auto">
+      <ul className="flex w-96 my-auto">
         {items.map((item, index) => (
           <li onClick={handlePrevClick}
-              className={`text-white transition-transform duration-300 ${
+              className={`text-white ${
               index === currentIndex ? 'block' : 'hidden'
               }`} key={item.id}>
               <NavLink to={item.link}>{item.text}</NavLink>
