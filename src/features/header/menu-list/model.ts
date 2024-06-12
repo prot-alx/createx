@@ -33,9 +33,9 @@ export const shop = {
 export const news = {
   items: [
     { id: 0, text: 'Up to 70% Off. Shop our latest sale styles', link: '/sales', },
-    { id: 1, text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.', link: '/', },
-    { id: 2, text: 'Fugiat non saepe consequatur maiores!', link: '/', },
-    { id: 3, text: 'Corrupti molestias eveniet exercitationem, ipsam laborum vero est?', link: '/', },
+    { id: 1, text: 'Lorem, ipsum dolor sit 22222.', link: '/', },
+    { id: 2, text: 'Fugiat non saepe consequatur maiores! 33333', link: '/', },
+    { id: 3, text: 'Corrupti molestias eveniet exercitationem, 4444', link: '/', },
   ],
 };
 
