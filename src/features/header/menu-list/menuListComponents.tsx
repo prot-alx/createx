@@ -92,20 +92,19 @@ export const HeaderAdList: React.FC<ListItemProps> = ({ items }) => {
   return (
     <div className="my-auto flex justify-center">
       <button onClick={handlePrevClick} className="bg-primary text-white p-2">
-        <img src={LeftArrow} alt="LeftArrow"/>
+        <img src={LeftArrow} alt="LeftArrow" />
       </button>
       <ul className="flex justify-center w-96 my-auto">
         {items.map((item, index) => (
           <li onClick={handleNextClick}
-              className={`text-white ${
-              index === currentIndex ? 'block' : 'hidden'
+            className={`text-white ${index === currentIndex ? 'block' : 'hidden'
               }`} key={item.id}>
-              <NavLink to={item.link}>{item.text}</NavLink>
+            <NavLink to={item.link}>{item.text}</NavLink>
           </li>
         ))}
       </ul>
       <button onClick={handleNextClick} className="bg-primary text-white p-2">
-        <img src={RightArrow} alt="RightArrow"/>
+        <img src={RightArrow} alt="RightArrow" />
       </button>
     </div>
   );
@@ -113,15 +112,12 @@ export const HeaderAdList: React.FC<ListItemProps> = ({ items }) => {
 
 export const TopHeaderCurrencySelector: React.FC<SocialListProps> = ({ items }) => {
   const [isOpen, setOpen] = useState(false);
-  
   const showCurrencyRef = useRef<HTMLDivElement>(null);
-
   const handleClickOutside = (event: MouseEvent) => {
     if (showCurrencyRef.current && !showCurrencyRef.current.contains(event.target as Node)) {
       setOpen(false);
     }
   };
-
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
@@ -129,17 +125,34 @@ export const TopHeaderCurrencySelector: React.FC<SocialListProps> = ({ items }) 
     };
   }, []);
 
+  const [currency, setCurrency] = useState(items[0]);
+
   return (
-    <div>
-      <nav ref={showCurrencyRef} className={`flex absolute bg-gray-900 justify-between gap-4 my-auto ${isOpen ? "visible" : "invisible"}`}>
-        <ul>
-          {items.map(item => (
-            <li onClick={() => setOpen(!isOpen)} className="flex gap-1 first:visible" key={item.id}>
-              <img className="w-5 h-3 my-auto" decoding='async' src={item.icon} alt="flag" /> {item.text}
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <div className="w-20">
+      <div 
+        className="flex gap-3 items-center"
+        onClick={() => 
+        setOpen(!isOpen)}
+      >
+        <img className="w-5 h-3" src={currency.icon} alt="icon" />{currency.text}
+      </div>
+      <ul
+        onMouseLeave={()=>setOpen(false)} 
+        className={`flex-col absolute bg-gray-900 justify-between gap-6 ${isOpen ? "visible" : "invisible"}`}
+      >
+        {items.map(currency => (
+          <li
+            key={currency.id}
+            onClick={() => {
+              setOpen(false); 
+              setCurrency(currency) 
+            }} 
+            className="flex gap-1 items-center p-1 hover:bg-gray-800 transition cursor-pointer min-w-20"            
+          >
+            <img className="w-5 h-3" decoding='async' src={currency.icon} alt="flag" /> {currency.text}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
@@ -163,24 +176,13 @@ export const UserCartAndWishlist: React.FC = () => {
 };
 
 export const SearchField: React.FC = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const ClearInput = () => {
-    console.log(inputRef);
-    if (inputRef.current) {
-      inputRef.current.value = "";
-    }
-  };
-
   return (
     <div className='my-auto'>
       <input
-        ref={inputRef}
-        onClick={ClearInput}
         type="text"
         name="Search"
         id="HeaderSearchInput"
-        defaultValue="Search for products..."
+        placeholder="Search for products..."
         className='px-3 w-[23rem] h-[3rem] border-2 border-gray-400 rounded-md text-gray-400'
       />
     </div>

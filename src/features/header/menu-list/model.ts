@@ -43,7 +43,7 @@ export const currency = {
   items: [
     { id: 0, icon: usaflag, text: 'Eng / $' },
     { id: 1, icon: euflag, text: 'Eur / €' },
-    { id: 2, icon: chinaflag, text: 'Cn / ¥' },
+    { id: 2, icon: chinaflag, text: 'Cn  / ¥' },
   ],
 };
 

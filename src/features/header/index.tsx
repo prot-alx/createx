@@ -14,7 +14,7 @@ export const Header = () => {
                     <TopHeaderLogin></TopHeaderLogin>
                 </div>
             </div>
-            <div className="flex justify-center text-base h-32">
+            <div className="flex justify-center text-base h-[84px]">
                 <div className="flex container mx-auto my-auto gap-4 justify-between">
                     <Banner />
                     <HeaderSalesMenu items={shop.items}></HeaderSalesMenu>

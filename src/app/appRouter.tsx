@@ -8,7 +8,7 @@ export const appRouter = createBrowserRouter([
       {
         path: '/',
         index: true,
-        element: <div className='mt-[150vh]'>MAIN</div>,
+        element: <div>MAIN</div>,
         errorElement: <div>404</div>
       },
       {
