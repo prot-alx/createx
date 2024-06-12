@@ -96,7 +96,7 @@ export const HeaderAdList: React.FC<ListItemProps> = ({ items }) => {
       </button>
       <ul className="flex w-96 my-auto">
         {items.map((item, index) => (
-          <li onClick={handlePrevClick}
+          <li onClick={handleNextClick}
               className={`text-white ${
               index === currentIndex ? 'block' : 'hidden'
               }`} key={item.id}>
@@ -112,8 +112,8 @@ export const HeaderAdList: React.FC<ListItemProps> = ({ items }) => {
 };
 
 export const TopHeaderCurrencySelector: React.FC<SocialListProps> = ({ items }) => {
-
   const [isOpen, setOpen] = useState(false);
+  
   const showCurrencyRef = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (event: MouseEvent) => {
