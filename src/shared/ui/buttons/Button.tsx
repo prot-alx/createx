@@ -3,7 +3,7 @@ import React from 'react';
 type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
-  type?: 'basic' | 'secondary' | 'dark' | 'white' ;
+  type?: 'basic' | 'secondary' | 'dark' | 'white' | 'transparent';
   size?: 'small' | 'regular' | 'large';
   disabled?: boolean;
   className?: string;
@@ -27,6 +27,9 @@ const Button: React.FC<ButtonProps> = ({
       break;
     case 'secondary':
       variantStyles = 'bg-gray-300 text-gray-800 hover:bg-white hover:border-2 hover:border-gray-400 active:bg-gray-400';
+      break;
+    case 'transparent':
+      variantStyles = 'border-[1px] border-primary text-primary hover:bg-gray-200 hover:border-[1px] active:bg-gray-400';
       break;
     case 'dark':
       variantStyles = 'bg-gray-800 text-white hover:bg-white hover:text-gray-800 hover:border-2 hover:border-gray-800 active:bg-gray-900 active:text-white';

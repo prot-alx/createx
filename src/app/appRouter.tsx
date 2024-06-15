@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { BaseLayout } from '@/widgets';
+import { HomePage } from '@/pages';
 
 export const appRouter = createBrowserRouter([
   {
@@ -8,7 +9,7 @@ export const appRouter = createBrowserRouter([
       {
         path: '/',
         index: true,
-        element: <div>MAIN</div>,
+        element: <HomePage/>,
         errorElement: <div>404</div>
       },
       {

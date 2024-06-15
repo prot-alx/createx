@@ -5,7 +5,7 @@ import { Footer } from '@/features/footer';
 
 export const BaseLayout: FC = () => {
   return (
-    <div className='flex flex-col h-screen justify-between'>
+    <div className='flex flex-col h-screen'>
       <Header />
       <Outlet />
       <Footer />
