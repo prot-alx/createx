@@ -1,5 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
+import { ShopPage } from '@/pages';
 import { BaseLayout } from '@/widgets';
+import { error } from 'console';
 
 export const appRouter = createBrowserRouter([
   {
@@ -10,6 +12,11 @@ export const appRouter = createBrowserRouter([
         index: true,
         element: <div>MAIN</div>,
         errorElement: <div>404</div>
+      },
+      {
+        path: '/shop',
+        element: <ShopPage />,
+        errorElement: <div>404</div>,
       },
       {
         path: '/contacts',

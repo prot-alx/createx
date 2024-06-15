@@ -7,7 +7,9 @@ export const BaseLayout: FC = () => {
   return (
     <div className='flex flex-col h-screen justify-between'>
       <Header />
-      <Outlet />
+      <main className='flex flex-grow'>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
