@@ -1,21 +1,14 @@
 import { FC } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Header } from '@/features/header';
+import { Footer } from '@/features/footer';
 
-interface BaseLayoutProps {
-  children: React.ReactNode;
-};
-
-export const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
+export const BaseLayout: FC = () => {
   return (
-    <div>
-      <header>
-        HEADER
-      </header>
-      <main>
-        {children}
-      </main>
-      <footer>
-        FOOTER
-      </footer>
+    <div className='flex flex-col h-screen justify-between'>
+      <Header />
+      <Outlet />
+      <Footer />
     </div>
   );
 };
