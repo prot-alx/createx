@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { NavLink } from "react-router-dom";
-import logo from "@/shared/logo/logo.png";
+import logo from "@/shared/img/logo/logo.png";
 
 export const Banner: FC = () => {
   return (
