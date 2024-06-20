@@ -57,7 +57,7 @@ export const ProductItem: FC<ListItemProps> = ({ items }) => {
               {option.label}
             </option>
           ))}
-        </select>
+        </select>        
       </div>
       <ul className="grid items-center grid-cols-3 gap-8">
         {sortedItems.map((item) => (
