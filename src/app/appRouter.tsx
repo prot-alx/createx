@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ShopPage } from '@/pages';
 import { BaseLayout } from '@/widgets';
-import { error } from 'console';
+//import { error } from 'console';
 
 export const appRouter = createBrowserRouter([
   {
