@@ -1,6 +1,7 @@
-import { useGetProductsQuery } from "@/app/store/api/api";
+import { useGetProductsQuery } from "@/app/store/api/apiProduct";
 import { SerializedError } from "@reduxjs/toolkit";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductList: React.FC = () => {
   const { data: products, error, isLoading } = useGetProductsQuery();
@@ -27,26 +28,28 @@ const ProductList: React.FC = () => {
       <ul>
         {products?.map((product) => (
           <li key={product.id} className="my-3 bg-gray-500 w-96">
-            <h2>{product.name}</h2>
-            <p>Price: {product.price}</p>
-            <p>Rating: {product.rating}</p>
-            <img src={product.image} alt={product.name} width="100" />
+            <Link to={`/shop/product/${product.id}`}>
+              <h2>{product.name}</h2>
+              <p>Price: {product.price}</p>
+              <p>Rating: {product.rating}</p>
+              <img src={product.image} alt={product.name} width="100" />
 
-            <h3>Colors:</h3>
-            <ul>
-              {product.colors.map((color) => (
-                <li key={color.id} style={{ color: color.colorCode }}>
-                  {color.name} ({color.colorCode})
-                </li>
-              ))}
-            </ul>
+              <h3>Colors:</h3>
+              <ul>
+                {product.colors.map((color) => (
+                  <li key={color.id} style={{ color: color.colorCode }}>
+                    {color.name} ({color.colorCode})
+                  </li>
+                ))}
+              </ul>
 
-            <h3>Sizes:</h3>
-            <ul>
-              {product.sizes.map((size) => (
-                <li key={size.id}>{size.name}</li>
-              ))}
-            </ul>
+              <h3>Sizes:</h3>
+              <ul>
+                {product.sizes.map((size) => (
+                  <li key={size.id}>{size.name}</li>
+                ))}
+              </ul>
+            </Link>
           </li>
         ))}
       </ul>

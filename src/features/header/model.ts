@@ -14,7 +14,7 @@ export const help = {
 export const shop = {
   items: [
     {  id: 0, text: 'Women', link: '/shop' },
-    {  id: 1, text: 'Men', link: '/shop' },
+    {  id: 1, text: 'Men', link: '/shop/sorted' },
     {  id: 2, text: 'Girls', link: '/shop' },
     {  id: 3, text: 'Boys', link: '/shop' },
     {  id: 4, text: 'Sales', link: '/sales' },

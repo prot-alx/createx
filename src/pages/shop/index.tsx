@@ -1,6 +1,5 @@
 import { FC}  from 'react';
 import { ProductItem } from '@/entities';
-import {product} from '@/shared/shop/model';
 
 const ShopPage: FC = () => {
   return (
@@ -9,7 +8,7 @@ const ShopPage: FC = () => {
         filters
       </section>
       <section className="flex-col items-center justify-center border border-gray-600">
-        <ProductItem items={product.items} />
+        <ProductItem />
       </section>
     </div>
   );
