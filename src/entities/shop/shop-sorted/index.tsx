@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useFetchSortedAndFilteredProductsQuery } from "@/app/store/api/apiProduct";
 import { SerializedError } from "@reduxjs/toolkit";
 import { Link } from "react-router-dom";
@@ -24,6 +24,7 @@ export const SortedProductList: React.FC<SortedProductListProps> = ({
   page,
   pageSize,
   setPage,
+  //setPageSize,
 }) => {
   const { data, error, isLoading } = useFetchSortedAndFilteredProductsQuery({
     sortField,
@@ -37,7 +38,7 @@ export const SortedProductList: React.FC<SortedProductListProps> = ({
 
   useEffect(() => {
     if (data) {
-      const totalPages = Math.ceil(data.count / pageSize);
+      const totalPages = data.totalPages;
       if (page > totalPages) {
         setPage(totalPages);
       }
@@ -71,8 +72,11 @@ export const SortedProductList: React.FC<SortedProductListProps> = ({
         <button onClick={() => setPage(page > 1 ? page - 1 : 1)}>
           Previous
         </button>
-        <button onClick={() => setPage(page + 1)}>Next</button>
+        <button onClick={() => setPage(page < data.totalPages ? page + 1 : page)}>
+          Next
+        </button>
       </div>
+      <p>Page {page} of {data.totalPages}</p>
       <ul>
         {products.map((product) => (
           <li key={product.id} className="my-3 bg-gray-500 w-96">
@@ -80,6 +84,7 @@ export const SortedProductList: React.FC<SortedProductListProps> = ({
               <h2>{product.name}</h2>
               <p>Price: {product.price}</p>
               <p>Rating: {product.rating}</p>
+              <p>Sales: {product.isSale ? "Yes" : "No"}</p>
               <img src={product.image} alt={product.name} width="100" />
               <h3>Colors:</h3>
               <ul>

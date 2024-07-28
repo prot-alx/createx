@@ -28,6 +28,7 @@ const ProductDetails: React.FC = () => {
       <h1>{product.name}</h1>
       <p>Price: {product.price}</p>
       <p>Rating: {product.rating}</p>
+      <p>Sales: {product.isSale ? "Yes" : "No"}</p>
       <img src={product.image} alt={product.name} width="100" />
 
       <h3>Colors:</h3>

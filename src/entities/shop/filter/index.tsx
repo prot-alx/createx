@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import FileUpload from "../file-upload";
 
 interface FilterComponentProps {
   sortField: string;
@@ -34,17 +35,23 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
   setPageSize,
 }) => {
   return (
-    <div className='flex flex-col gap-5'>
+    <div className="flex flex-col gap-5">
       <label>
         Sort Field:
-        <select value={sortField} onChange={(e) => setSortField(e.target.value)}>
+        <select
+          value={sortField}
+          onChange={(e) => setSortField(e.target.value)}
+        >
           <option value="price">Price</option>
           <option value="rating">Rating</option>
         </select>
       </label>
       <label>
         Sort Order:
-        <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+        <select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+        >
           <option value="ASC">Ascending</option>
           <option value="DESC">Descending</option>
         </select>
@@ -78,18 +85,29 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
         <input
           type="number"
           value={page}
-          onChange={(e) => setPage(Number(e.target.value))}
+          onChange={(e) => {
+            const value = Number(e.target.value);
+            if (value >= 1) {
+              setPage(value);
+            } else {
+              setPage(1); // Если значение меньше 1, устанавливаем 1
+            }
+          }}
         />
       </label>
       <label>
         Page Size:
-        <select value={pageSize} onChange={(e) => setPageSize(Number(e.target.value))}>
+        <select
+          value={pageSize}
+          onChange={(e) => setPageSize(Number(e.target.value))}
+        >
           <option value={5}>5</option>
           <option value={10}>10</option>
           <option value={15}>15</option>
           {/* You can add more options based on your requirements */}
         </select>
       </label>
+      <FileUpload />
     </div>
   );
 };
