@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
-import { useFetchSortedAndFilteredProductsQuery } from '@/app/store/api/apiProduct'; // исправьте импорт, если он неправильный
-import { SerializedError } from '@reduxjs/toolkit';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useFetchSortedAndFilteredProductsQuery } from "@/app/store/api/apiProduct";
+import { SerializedError } from "@reduxjs/toolkit";
+import { Link } from "react-router-dom";
 
-export const SortedProductList: React.FC = () => {
-  const [sortField, setSortField] = useState('price');
-  const [sortOrder, setSortOrder] = useState('ASC');
-  const [minPrice, setMinPrice] = useState(50);
-  const [maxPrice, setMaxPrice] = useState(200);
-  const [isSale, setIsSale] = useState(true);
-  const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+interface SortedProductListProps {
+  sortField: string;
+  sortOrder: string;
+  minPrice: number;
+  maxPrice: number;
+  isSale: boolean;
+  page: number;
+  pageSize: number;
+  setPage: (value: number) => void;
+  setPageSize: (value: number) => void;
+}
 
+export const SortedProductList: React.FC<SortedProductListProps> = ({
+  sortField,
+  sortOrder,
+  minPrice,
+  maxPrice,
+  isSale,
+  page,
+  pageSize,
+  setPage,
+}) => {
   const { data, error, isLoading } = useFetchSortedAndFilteredProductsQuery({
     sortField,
     sortOrder,
@@ -22,85 +35,43 @@ export const SortedProductList: React.FC = () => {
     pageSize,
   });
 
+  useEffect(() => {
+    if (data) {
+      const totalPages = Math.ceil(data.count / pageSize);
+      if (page > totalPages) {
+        setPage(totalPages);
+      }
+    }
+  }, [data, page, pageSize, setPage]);
+
   if (isLoading) return <p>Loading...</p>;
 
   if (error) {
     let errorMessage: string;
 
-    if ('status' in error) {
-      errorMessage = 'error' in error ? error.error : JSON.stringify(error.data);
+    if ("status" in error) {
+      errorMessage =
+        "error" in error ? error.error : JSON.stringify(error.data);
     } else {
-      errorMessage = (error as SerializedError).message || 'Unknown error';
+      errorMessage = (error as SerializedError).message || "Unknown error";
     }
 
     return <p>Error: {errorMessage}</p>;
   }
 
-  // Проверка, является ли data объектом и содержит ли поле rows
   if (!data || !Array.isArray(data.rows)) {
     return <p>Error: Invalid data format</p>;
   }
 
   const products = data.rows;
-  console.log(data)
+
   return (
     <div>
-      <h1>Sorted and Filtered Product List</h1>
       <div>
-        <label>
-          Sort Field:
-          <select value={sortField} onChange={(e) => setSortField(e.target.value)}>
-            <option value="price">Price</option>
-            <option value="rating">Rating</option>
-          </select>
-        </label>
-        <label>
-          Sort Order:
-          <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-            <option value="ASC">Ascending</option>
-            <option value="DESC">Descending</option>
-          </select>
-        </label>
-        <label>
-          Min Price:
-          <input
-            type="number"
-            value={minPrice}
-            onChange={(e) => setMinPrice(Number(e.target.value))}
-          />
-        </label>
-        <label>
-          Max Price:
-          <input
-            type="number"
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(Number(e.target.value))}
-          />
-        </label>
-        <label>
-          Sale:
-          <input
-            type="checkbox"
-            checked={isSale}
-            onChange={(e) => setIsSale(e.target.checked)}
-          />
-        </label>
-        <label>
-          Page:
-          <input
-            type="number"
-            value={page}
-            onChange={(e) => setPage(Number(e.target.value))}
-          />
-        </label>
-        <label>
-          Page Size:
-          <input
-            type="number"
-            value={pageSize}
-            onChange={(e) => setPageSize(Number(e.target.value))}
-          />
-        </label>
+        <button onClick={() => setPage(page > 1 ? page - 1 : 1)}>
+          Previous
+        </button>
+        <button onClick={() => setPage(page + 1)}>Next</button>
       </div>
       <ul>
         {products.map((product) => (

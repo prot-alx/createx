@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 interface Category {
   id: number;
@@ -16,7 +16,7 @@ interface Size {
   name: string;
 }
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
   price: string;
@@ -36,11 +36,11 @@ interface Product {
 }
 
 export const apiProduct = createApi({
-  reducerPath: 'apiProduct',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
+  reducerPath: "apiProduct",
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/" }),
   endpoints: (builder) => ({
     getProducts: builder.query<Product[], void>({
-      query: () => 'products',
+      query: () => "products",
     }),
     getProduct: builder.query<Product, number>({
       query: (id) => `products/${id}`,
@@ -51,15 +51,31 @@ export const apiProduct = createApi({
 export const { useGetProductsQuery, useGetProductQuery } = apiProduct;
 
 export const sortedProductsApi = createApi({
-  reducerPath: 'sortedProductsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
+  reducerPath: "sortedProductsApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/" }),
   endpoints: (builder) => ({
     fetchSortedAndFilteredProducts: builder.query<
-      { count: number; rows: Product[] },
-      { sortField: string; sortOrder: string; minPrice: number; maxPrice: number; isSale: boolean; page: number; pageSize: number }
+      { count: number; rows: Product[]; totalPages: number },
+      {
+        sortField: string;
+        sortOrder: string;
+        minPrice: number;
+        maxPrice: number;
+        isSale: boolean;
+        page: number;
+        pageSize: number;
+      }
     >({
-      query: ({ sortField, sortOrder, minPrice, maxPrice, isSale, page, pageSize }) => ({
-        url: 'products/sorted-and-filtered',
+      query: ({
+        sortField,
+        sortOrder,
+        minPrice,
+        maxPrice,
+        isSale,
+        page,
+        pageSize,
+      }) => ({
+        url: "products/sorted-and-filtered",
         params: {
           sortField,
           sortOrder,
@@ -75,4 +91,3 @@ export const sortedProductsApi = createApi({
 });
 
 export const { useFetchSortedAndFilteredProductsQuery } = sortedProductsApi;
-
