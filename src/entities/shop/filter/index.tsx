@@ -104,7 +104,7 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
           <option value={5}>5</option>
           <option value={10}>10</option>
           <option value={15}>15</option>
-          {/* You can add more options based on your requirements */}
+          {/* Можно еще добавить вручную сколько элементов на странице требуется */}
         </select>
       </label>
       <FileUpload />
